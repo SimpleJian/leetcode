@@ -11,4 +11,3 @@ git add -A
 git commit -m "$cmd"
 git pull origin master
 git push origin master
-
