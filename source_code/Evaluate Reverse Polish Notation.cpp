@@ -1,4 +1,4 @@
-ass Solution {
+class Solution {
 
 public:
 
