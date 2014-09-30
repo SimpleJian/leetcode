@@ -30,7 +30,7 @@ public:
 
         for(j=i+1; j<n; j++){
 
-            if(num[j]>num[i] && num[j]<min_bigger){
+            if(num[j]>num[i] && num[j]<=min_bigger){
 
                 min_bigger = num[j];
 
@@ -42,7 +42,7 @@ public:
 
         swap(num[i], num[id]);
 
-        sort(num.begin()+i+1, num.end());
+        reverse(num.begin()+i+1, num.end());
 
     }
 
