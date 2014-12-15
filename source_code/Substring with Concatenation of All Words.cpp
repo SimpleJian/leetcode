@@ -14,25 +14,27 @@ public:
 
         unordered_map<string, int> m;
 
+        unordered_map<string, int>::iterator it;
+
         for(int i=0; i<n; i++)  m[L[i]]++;
 
         for(int i=0; i+n*len-1 < S.length(); i++){
 
             unordered_map<string, int> strmap = m;
 
-            int yes = 1;
+            bool yes = 1;
 
             for(int k=0; k<n; k++){
 
-                unordered_map<string,int>::iterator it;
+                if((it = strmap.find(S.substr(i+k*len,len)))!=strmap.end()&&it->second>0)  it->second--;
 
-                if((it=strmap.find(S.substr(i+k*len,len)))!=strmap.end()&&it->second>0){
+                else{
 
-                    it->second--;
+                    yes = 0;
+
+                    break;
 
                 }
-
-                else    {yes=0; break;}
 
             }
 
